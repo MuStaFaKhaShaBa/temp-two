@@ -4,7 +4,6 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: black;
 }
 
 .container {
@@ -280,5 +279,119 @@ header .container nav .links ul li .active::after {
 .landing ul li:nth-child(2) {
   border: 1px solid #19c8fa;
   background-color: #19c8fa;
+}
+
+.services {
+  padding: 60px 0;
+}
+
+.services .container .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-bottom: 40px;
+}
+
+.services .container .service {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.services .container .service > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+.services .container .service > div i {
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+}
+
+.services .container .service > div div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.services .container .service > div div h3 {
+  color: #19c8fa;
+  margin-bottom: 30px;
+}
+
+.services .container .service > div div p {
+  line-height: 2;
+  color: #777;
+}
+
+@media (max-width: 767px) {
+  .services .container .service > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    text-align: center;
+  }
+}
+
+.speacial-heading {
+  font-size: 40px;
+  font-weight: normal;
+  position: relative;
+  padding: 35px 0;
+  display: inline-block;
+}
+
+.speacial-heading::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 25px;
+  margin: 0px;
+  padding: 0px;
+  width: 120px;
+  border: 1px solid black;
+  z-index: 2;
+}
+
+.speacial-heading::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 92.5%;
+  right: 48%;
+  margin: 0px;
+  padding: 0px;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  background-color: white;
+  z-index: 3;
+}
+
+.speacial-heading + p {
+  color: #777;
+  margin-top: 25px;
+  max-width: 500px;
+  text-align: center;
+  line-height: 2;
 }
 /*# sourceMappingURL=style.css.map */
