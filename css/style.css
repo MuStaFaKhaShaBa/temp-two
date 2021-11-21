@@ -29,13 +29,67 @@ body {
   }
 }
 
+.speacial-heading {
+  font-size: 40px;
+  font-weight: normal;
+  position: relative;
+  display: inline-block;
+}
+
+.speacial-heading + hr {
+  width: 125px;
+  border-color: black;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.speacial-heading + hr::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 40%;
+  margin: 0;
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.speacial-heading + hr + p {
+  color: #777;
+  max-width: 500px;
+  text-align: center;
+  line-height: 2;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-bottom: 40px;
+}
+
 header {
   width: 100%;
   position: absolute;
 }
 
 header .container {
-  padding: 25px 10px;
+  padding: 30px 10px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,7 +138,7 @@ header .container nav i {
 
 header .container nav .search-icon {
   border-left: 1px solid white;
-  padding: 10px;
+  padding: 1px 10px 1px 15px;
   margin-left: 25px;
 }
 
@@ -133,8 +187,9 @@ header .container nav .links ul li .active::after {
   right: 0%;
   margin: 0px;
   padding: 0px;
-  width: 100%;
+  width: 98%;
   border: 1px solid #19c8fa;
+  opacity: 0.5;
 }
 
 @media (max-width: 767px) {
@@ -182,12 +237,6 @@ header .container nav .links ul li .active::after {
   height: 100vh;
   position: relative;
   z-index: -1;
-}
-
-.landing .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 .landing .text-box {
@@ -285,30 +334,11 @@ header .container nav .links ul li .active::after {
   padding: 60px 0;
 }
 
-.services .container .heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  margin-bottom: 40px;
-}
-
 .services .container .service {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  -ms-grid-columns: (minmax(450px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 30px;
 }
 
@@ -350,48 +380,263 @@ header .container nav .links ul li .active::after {
   }
 }
 
-.speacial-heading {
-  font-size: 40px;
-  font-weight: normal;
+@media (max-width: 767px) {
+  .services .container .service {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .services .container .service > div {
+    width: 100%;
+  }
+}
+
+.feature {
+  padding: 60px 0;
+  background-image: url("../image/design-features.jpg");
+  background-size: cover;
+  height: 600px;
   position: relative;
-  padding: 35px 0;
-  display: inline-block;
+  overflow: hidden;
 }
 
-.speacial-heading::after {
-  content: "";
+.feature .overlay {
+  top: 0;
+}
+
+.feature .text-box {
   position: absolute;
-  top: 100%;
-  right: 25px;
+  top: 120px;
+  right: 0px;
   margin: 0px;
   padding: 0px;
-  width: 120px;
-  border: 1px solid black;
-  z-index: 2;
+  width: 53%;
+  color: white;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.speacial-heading::before {
-  content: "";
-  width: 15px;
-  height: 15px;
-  border: 2px solid black;
-  border-radius: 50%;
+.feature .text-box .text {
+  width: 500px;
+}
+
+.feature .text-box .text h2 {
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+.feature .text-box .text ul {
+  list-style: none;
+  margin-left: -30px;
+}
+
+.feature .text-box .text ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px;
+}
+
+.feature .text-box .text ul li i {
+  -ms-flex-preferred-size: 40px;
+      flex-basis: 40px;
+}
+
+.feature .text-box .text ul li p {
+  font-size: 17px;
+  margin-top: -5px;
+}
+
+.feature img {
   position: absolute;
-  top: 92.5%;
-  right: 48%;
+  top: 30%;
+  right: 120%;
   margin: 0px;
   padding: 0px;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  background-color: white;
-  z-index: 3;
 }
 
-.speacial-heading + p {
-  color: #777;
-  margin-top: 25px;
-  max-width: 500px;
+@media (max-width: 767px) {
+  .feature img {
+    display: none;
+  }
+  .feature .text-box {
+    min-width: 100%;
+  }
+}
+
+.portfolio .header {
   text-align: center;
-  line-height: 2;
+}
+
+.portfolio .header ul {
+  list-style: none;
+  margin: 100px 0 30px 0;
+}
+
+.portfolio .header ul li {
+  display: inline-block;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.portfolio .header ul li:nth-child(2) {
+  padding-left: 10px;
+}
+
+.portfolio .header ul li:first-child {
+  background-color: #19c8fa;
+  color: white;
+  padding: 10px;
+}
+
+.portfolio .images {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 5px;
+}
+
+.portfolio .images .img-box {
+  overflow: hidden;
+}
+
+@media (min-width: 1099px) {
+  .portfolio .images .img-box {
+    height: 250px;
+  }
+}
+
+.portfolio .images .img-box img {
+  max-width: 100%;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.portfolio .images .img-box p {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 15px 20px;
+  z-index: 5;
+  line-height: 1.8;
+  background-color: #fff;
+}
+
+.portfolio .images .img-box p span {
+  color: #19c8fa;
+}
+
+.portfolio .images .img-box:hover p {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.portfolio .images .img-box:hover img {
+  -webkit-transform: scale(1.1) rotate(5deg);
+          transform: scale(1.1) rotate(5deg);
+}
+
+.portfolio button {
+  margin: 40px 0 100px 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 15px 25px;
+  background-color: #19c8fa;
+  outline: none;
+  border: none;
+}
+
+.portfolio button a {
+  color: white;
+  text-decoration: none;
+}
+
+.awesome-video {
+  position: relative;
+}
+
+.awesome-video video {
+  width: 100%;
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+}
+
+.awesome-video .text-box {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 50px;
+}
+
+.awesome-video .text-box h2 {
+  color: white;
+  font-weight: normal;
+}
+
+.awesome-video .text-box p {
+  color: white;
+  padding: 30px;
+}
+
+.awesome-video .text-box button {
+  padding: 10px 30px;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+
+.awesome-video .text-box button a {
+  color: white;
+  text-decoration: none;
+}
+
+.about {
+  overflow: hidden;
+  padding: 60px 0 0;
+  max-height: 90vh;
+}
+
+.about .container img {
+  width: 80vw;
+}
+
+.stats {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url(../image/stats.png);
+  background-size: cover;
+  position: relative;
+}
+
+.stats .container {
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
